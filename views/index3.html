@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phương trình bậc 2 Using AjaxAsync</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Hàm tính phương trình bậc 2 sử dụng Async - Ajax ES7</h1>
+<form action = "/" method = "POST" id="graphform">
+  a: <input type = "text" name = "a" value="{{ a }}"><br>
+  b: <input type = "text" name = "b" value="{{ b }}"><br>
+  c: <input type = "text" name = "c" value="{{ c }}"><br>
+</form>
+<button onclick="getResult()">Get result</button>
+<h3 id="x1"> X1 : </h3>
+<h3 id="x2"> X2 : </h3>
+<img id="myGraph" src ="" width="1000" height="500">
+<script>
+    function getResult(){
+        var formData = $("#graphform").serialize(); 
+        $.ajax({
+            type : "POST",
+            url : "/",
+            data : formData,
+            dataType : "json",
+            success : function(data){
+                $("#x1").text("X1 :".concat(data.x1));
+                $("#x2").text("X2 :".concat(data.x2));
+                $("#myGraph").attr("src",data.filePath);
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "vedothibac2",
+  "version": "1.0.0",
+  "description": "Vẽ đồ thị bậc 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha -S"
+  },
+  "keywords": [
+    "vẽ",
+    "đồ",
+    "thị"
+  ],
+  "author": "Trịnh Minh Cường",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.16.0",
+    "chai": "^3.5.0",
+    "child_process": "^1.0.2",
+    "express": "^4.14.1",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "nunjucks": "^3.0.0",
+    "plotly": "^1.0.6",
+    "shortid": "^2.2.6"
+  }
+}
